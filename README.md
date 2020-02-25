@@ -6,6 +6,8 @@ This is Etch-a-Sketch project in The Odin Project. They said this shouldn't be
 really easy, so I'll think of there's a lot of humps to be going over with, I'll
 try my best to solve this problem.
 
+<b>By the end of this project, you should be able to write what skills you have learned.</b>
+
 ### Assignment
 
 There are assignments to be followed. By following these steps in the assignment
