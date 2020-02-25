@@ -8,12 +8,19 @@
 </head>
 
 <body>
-  
+  <div id="container">
+
+  </div>
 </body>
 
 <!-- Javascript here for now, after I'll have it as an external script -->
 <script>
-  let newDiv = document.createElement("div");
+  let container = document.getElementById("container");
   
+  let newDiv = document.createElement("div");
+  container.appendChild(newDiv);
+
+  console.log(container);
+
 </script>
 </html>

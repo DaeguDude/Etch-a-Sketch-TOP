@@ -22,8 +22,8 @@ ish it.
     
     ~1. Create the divs using JavaScript… don’t try making them by hand with copy and pasting in your html file!~
 
-    2. Best to put your grid squares inside another "container" div(that one can
-    go directly in your html)
+    ~2. Best to put your grid squares inside another "container" div(that one can
+    go directly in your html)~
 
     3. There are several diffrent ways to make the divs appear as a grid(versus
     just one on each line) feel free to use any or play with each of them:
