@@ -16,7 +16,7 @@ dent's solutions, and they were pretty impressive. I am afraid if I could make
 it like that as well, but I will try my best and get help from others to accompl
 ish it.
 
-1. Follow the instructions atop Odin’s Google Homepage project to setup a git repository for this project.
+~1. Follow the instructions atop Odin’s Google Homepage project to setup a git repository for this project.~
 
 2. Create a webpage with a 16x16 grid of square divs
     
