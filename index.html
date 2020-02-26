@@ -9,18 +9,32 @@
 
 <body>
   <div id="container">
-
   </div>
 </body>
 
 <!-- Javascript here for now, after I'll have it as an external script -->
 <script>
-  let container = document.getElementById("container");
   
-  let newDiv = document.createElement("div");
-  container.appendChild(newDiv);
+  
+  // let newDiv = document.createElement("div");
+  // container.appendChild(newDiv);
 
-  console.log(container);
+  // Get container to variable container
+  let container = document.getElementById("container");
+
+  let numCellRow = prompt("How many squares in a row?");
+  let numCellCol = prompt("How many squares in a column?");
+
+  // Num of divs to be created
+  let numGridItems = numCellRow * numCellCol 
+  for (let i = 0; i < numGridItems; i++) {
+    let newDiv = document.createElement("div");
+    container.appendChild(newDiv);
+  }
+
+  
+  container.style.gridTemplateColumns = `repeat(${numCellRow}, 1fr)`;
+  container.style.gridTemplateRows = `repeat(${numCellCol}, 1fr)`;
 
 </script>
 </html>

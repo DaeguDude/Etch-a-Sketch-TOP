@@ -25,17 +25,17 @@ ish it.
     ~2. Best to put your grid squares inside another "container" div(that one can
     go directly in your html)~
 
-    3. There are several diffrent ways to make the divs appear as a grid(versus
-    just one on each line) feel free to use any or play with each of them:
+    ~3. There are several diffrent ways to make the divs appear as a grid(versus
+    just one on each line) feel free to use any or play with each of them:~
         1. float/clear
         2. inline-block
         3. flexbox
         4. CSS Grid
 
-    4. Be careful with borders and margins, they can adjust the size of the 
-    squares!
+    ~4. Be careful with borders and margins, they can adjust the size of the 
+    squares!~
 
-    5. "OMG, Why isn't my grid being created???"
+    ~5. "OMG, Why isn't my grid being created???"~
         1. Open your browser's developer tools
         2. Check if there are any erros in the JavaScript console
         3. Check your "elements" pane to see if the elements have actually shown
