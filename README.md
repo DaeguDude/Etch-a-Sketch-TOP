@@ -36,6 +36,7 @@ ish it.
     squares!~
 
     ~5. "OMG, Why isn't my grid being created???"~
+    
         1. Open your browser's developer tools
         2. Check if there are any erros in the JavaScript console
         3. Check your "elements" pane to see if the elements have actually shown
