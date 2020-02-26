@@ -8,26 +8,31 @@
 </head>
 
 <body>
+  <button id="reset">Clear Grid</button>
+
   <div id="container">
   </div>
 </body>
 
 <!-- Javascript here for now, after I'll have it as an external script -->
 <script>
+  let numCols = '';
+  let numRows = '';
+
+  function removeAllChilds(node) {
+    while(node.lastChild) {
+      node.removeChild(node.lastChild);
+    }
+  }
+
+  function promptUserSqrs() {
+    numCols = prompt("How many squares in a row?");
+    numRows = prompt("How many squares in a column?");
+  }
   
-  
-  // let newDiv = document.createElement("div");
-  // container.appendChild(newDiv);
-
-  // Get container to variable container
-  let container = document.getElementById("container");
-
-  let numCellRow = prompt("How many squares in a row?");
-  let numCellCol = prompt("How many squares in a column?");
-
-  // Num of divs to be created
-  let numGridItems = numCellRow * numCellCol 
-  for (let i = 0; i < numGridItems; i++) {
+  function makeGrid(numCols, numRows) {
+    let numGridItems = numRows * numCols
+    for (let i = 0; i < numGridItems; i++) {
     let newDiv = document.createElement("div");
     
     // When mouse hovers to the div, it changes the color
@@ -36,11 +41,35 @@
     });
 
     container.appendChild(newDiv);
-  }
+    }
+  } 
+
+
+
+  promptUserSqrs();
+  
+  let container = document.getElementById("container");
 
   // Apply the rules to CSS
-  container.style.gridTemplateColumns = `repeat(${numCellRow}, 1fr)`;
-  container.style.gridTemplateRows = `repeat(${numCellCol}, 1fr)`;
+  container.style.gridTemplateColumns = `repeat(${numCols}, 1fr)`;
+  container.style.gridTemplateRows = `repeat(${numRows}, 1fr)`;
+
+  makeGrid(numCols, numRows)
+
+
+
+
+  // If the button is clicked
+  let clearButton = document.getElementById("reset");
+  clearButton.addEventListener("click", () => {
+    removeAllChilds(container);
+    setTimeout(promptUserSqrs, 50);
+    console.log(numCols);
+    console.log(numRows);
+    // makeGrid(numCols, numRows);
+  });
+
+  console.log(container);
 
 </script>
 </html>

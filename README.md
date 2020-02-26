@@ -59,6 +59,13 @@ passes over them, leaving a (pixelated) trail through your grid like a pen would
         2. changing the div's background color using JavaScript.
 
 
+### WORKING ON THIS!!!!!!!
+`MakeGrid` function is executed even before completing `promptUserSqrs`
+ functions. So, it's not possible for me to make a grid with the given user's answers.
+Luckily, there's a setup called `promise` in javasciprt, I will start working
+on that and calls the `makegrid` when `promptUserSqrs` has been completed.
+
+
 4. Add a button to the top of the screen which will clear the current grid and
 send the user a popup asking for how many squares per side to make the new grid.
 Once entered the new grid should be generated in the same total space as before
