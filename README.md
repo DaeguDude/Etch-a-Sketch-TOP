@@ -46,9 +46,10 @@ ish it.
         see if it's actually being loaded.
 
 
-3. Set up a "hover" effect so that the grid divs change color when your mouse
+~3. Set up a "hover" effect so that the grid divs change color when your mouse
 passes over them, leaving a (pixelated) trail through your grid like a pen would
-.
+.~
+
     1. Hint: "hovering" is what happens when your mouse enters a div and ends
     when your mouse leaves it.. you can set up event listeners for either of 
     those events as a starting point.
