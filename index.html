@@ -29,10 +29,14 @@
   let numGridItems = numCellRow * numCellCol 
   for (let i = 0; i < numGridItems; i++) {
     let newDiv = document.createElement("div");
+    newDiv.addEventListener("mouseover", () => {
+      newDiv.style.background = "yellow";
+    });
+
     container.appendChild(newDiv);
   }
 
-  
+  // Apply the rules to CSS
   container.style.gridTemplateColumns = `repeat(${numCellRow}, 1fr)`;
   container.style.gridTemplateRows = `repeat(${numCellCol}, 1fr)`;
 
