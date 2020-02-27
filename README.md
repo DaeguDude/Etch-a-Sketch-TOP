@@ -69,8 +69,12 @@ Once entered the new grid should be generated in the same total space as before
     3. You should be able to enter 64 and have a brand new 64x64 grid pop up wi
     thout changing the total amount of pixels used 
 
-5. (Optional): Instead of just changing the color of your grid from black to wh
-ite (for example) have each pass through it with the mouse change to a completel
+# WORK ON....
+- How to deal with float precision in Javascript?
+- Prompt cancel input
+
+5. (Optional): Instead of just changing the color of your grid from black to whi
+te (for example) have each pass through it with the mouse change to a completel
 y random RGB value. Then try having each pass just add another 10% of black to i
 t so that only after 10 passes is the square completely black.
 
