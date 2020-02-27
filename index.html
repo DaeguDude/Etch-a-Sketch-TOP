@@ -19,26 +19,32 @@
   let numCols = '';
   let numRows = '';
 
+  // Remove all childs of one node
   function removeAllChilds(node) {
     while(node.lastChild) {
       node.removeChild(node.lastChild);
     }
   }
 
+  // Prompt User for asking how many squares to be made
+  // If callback is passed in, execute callback function
   function promptUserSqrs(makeGrid) {
     numCols = prompt("How many squares in a row?");
     numRows = prompt("How many squares in a column?");
 
     // If makeGrid function was passed, execute the function
     if (typeof makeGrid != 'undefined') {
-      console.log("Make Grid executed");
-      console.log(numCols);
-      console.log(numRows);
       makeGrid(numCols, numRows);
     }
   }
   
+  // This will make a grid in the container by given number of cols and rows
   function makeGrid(numCols, numRows) {
+    // Get container ready for GridItems
+    container.style.gridTemplateColumns = `repeat(${numCols}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${numRows}, 1fr)`;
+    
+    // Make grid items and append it to the container box
     let numGridItems = numRows * numCols
     for (let i = 0; i < numGridItems; i++) {
     let newDiv = document.createElement("div");
@@ -52,26 +58,16 @@
     }
   } 
 
-
-
   promptUserSqrs();
   
   let container = document.getElementById("container");
-
-  // Apply the rules to CSS
-  container.style.gridTemplateColumns = `repeat(${numCols}, 1fr)`;
-  container.style.gridTemplateRows = `repeat(${numRows}, 1fr)`;
-
   makeGrid(numCols, numRows)
-
-
-
 
   // If the button is clicked
   let clearButton = document.getElementById("reset");
   clearButton.addEventListener("click", () => {
     removeAllChilds(container);
-    setTimeout(promptUserSqrs(makeGrid), 50);
+    setTimeout(promptUserSqrs(makeGrid), 1000);
   });
 
   console.log(container);

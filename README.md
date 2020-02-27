@@ -58,18 +58,10 @@ passes over them, leaving a (pixelated) trail through your grid like a pen would
         1. adding a new class to the div
         2. changing the div's background color using JavaScript.
 
-
-### WORKING ON THIS!!!!!!!
-`MakeGrid` function is executed even before completing `promptUserSqrs`
- functions. So, it's not possible for me to make a grid with the given user's answers.
-Luckily, there's a setup called `promise` in javasciprt, I will start working
-on that and calls the `makegrid` when `promptUserSqrs` has been completed.
-
-
-4. Add a button to the top of the screen which will clear the current grid and
+~4. Add a button to the top of the screen which will clear the current grid and
 send the user a popup asking for how many squares per side to make the new grid.
 Once entered the new grid should be generated in the same total space as before
-(e.g. 960px wide) and now you've got a new sketch pad.
+(e.g. 960px wide) and now you've got a new sketch pad.~
 
     1. Research button tags in HTML and how you can make a JavaScript function 
     run when one is clicked.
