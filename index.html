@@ -25,9 +25,17 @@
     }
   }
 
-  function promptUserSqrs() {
+  function promptUserSqrs(makeGrid) {
     numCols = prompt("How many squares in a row?");
     numRows = prompt("How many squares in a column?");
+
+    // If makeGrid function was passed, execute the function
+    if (typeof makeGrid != 'undefined') {
+      console.log("Make Grid executed");
+      console.log(numCols);
+      console.log(numRows);
+      makeGrid(numCols, numRows);
+    }
   }
   
   function makeGrid(numCols, numRows) {
@@ -63,10 +71,7 @@
   let clearButton = document.getElementById("reset");
   clearButton.addEventListener("click", () => {
     removeAllChilds(container);
-    setTimeout(promptUserSqrs, 50);
-    console.log(numCols);
-    console.log(numRows);
-    // makeGrid(numCols, numRows);
+    setTimeout(promptUserSqrs(makeGrid), 50);
   });
 
   console.log(container);

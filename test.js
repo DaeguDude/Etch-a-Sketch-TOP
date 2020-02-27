@@ -1,9 +1,10 @@
-let myFirstPromise = new Promise((resolve, reject) => {
-  setTimeout( function() {
-    resolve("Success!")
-  }, 250)
-})
+function a(passed) {
+  
+  if (typeof passed === 'undefined') {
+    console.log(passed);
+  } else {
+    console.log("what");
+  }
+}
 
-myFirstPromise.then((successMessage) => {
-  console.log("Yay! " + successMessage)
-});
+a();
