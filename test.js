@@ -1,17 +1,17 @@
-let str = 'rgb(68, 39, 160)';
-
-let startIndex = str.search("\\(") + 1;
-let endIndex = str.search("\\)");
-let rgb = str.substring(startIndex, endIndex);
-rgb = rgb.split(",");
-console.log(rgb);
-
+let red = 155
+let green = 255
+let blue = 20
 
 for (let i = 0; i < 10; i++) {
-  // redVal = redVal - oneTenthRedVal;
-  // greenVal = greenVal - oneTenthgreenVal;
-  // blueVal = blueVal - oneTenthblueVal;
+  let numCalled = Math.floor(Math.random() * 10);
+  console.log(`number of times called: ${numCalled}`);
 
-  // console.log(`count ${i+1} - redVal = ${redVal}, greenVal = ${greenVal}, 
-  // blueVal = ${blueVal}`);
+  let percent = (1 - (numCalled / 10)).toPrecision(2);
+  console.log(`percent to multiply: ${percent}`)
+
+  console.log("\n")
+
+
 }
+
+

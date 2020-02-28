@@ -59,12 +59,24 @@
           
       // When mouse hovers to the div, it changes the color
       newDiv.addEventListener("mouseover", () => {
-        let numCalled = newDiv.getAttribute("data-Num-Hovered");
-        console.log(`data-num-hovered: ${numCalled}`);
+        let numCalled = newDiv.getAttribute("data-num-hovered");
+        
+        // This is the initial RGB
         let initialRGB = randomRgbsList[i];
-        newDiv.style.background = 
-  
-        console.log(makeRGBTenPercentToBlack(randomRgbsList[i]));
+
+        if (numCalled === 0) {
+          newDiv.style.background = randomRgbsList[i]; 
+        }
+         
+        if (numCalled < 10) {
+          numCalled++;
+          newDiv.setAttribute("data-num-hovered", numCalled);
+
+          let newRGB = makeRGBGivenPercentToBlack(initialRGB, numCalled);
+          newDiv.style.background = newRGB;
+        }
+
+       
         
       });
 
@@ -81,20 +93,18 @@
   }
 
   // Make the value 10 percent close to black
-  function makeRGBTenPercentToBlack(rgbValue) {
+  function makeRGBGivenPercentToBlack(rgbValue, numCalled) {
     let rgbInArray = rgbStringTearDown(rgbValue);
     
     let red = rgbInArray[0];
     let green = rgbInArray[1];
     let blue = rgbInArray[2];
 
-    let oneTenthRed = (red * 0.1).toPrecision(3);
-    let oneTenthGreen = (green * 0.1).toPrecision(3);
-    let oneTenthBlue = (blue * 0.1).toPrecision(3);
+    let percent = (1 - (numCalled / 10)).toPrecision(2);
 
-    red = (red - oneTenthRed).toPrecision(4);
-    green = (green - oneTenthGreen).toPrecision(4);
-    blue = (blue - oneTenthBlue).toPrecision(4);
+    red = (red * percent).toPrecision(4);
+    green = (green * percent).toPrecision(4);
+    blue = (blue * percent).toPrecision(4);
 
     return `rgb(${red}, ${green}, ${blue})`;
   }
