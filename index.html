@@ -18,6 +18,8 @@
 <script>
   let numCols = '';
   let numRows = '';
+  
+  let randomRgbsList = []
 
   // Remove all childs of one node
   function removeAllChilds(node) {
@@ -43,38 +45,84 @@
     // Get container ready for GridItems
     container.style.gridTemplateColumns = `repeat(${numCols}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${numRows}, 1fr)`;
+
+    // Make RGBs array to give it to the container 
+    makeRgbsList(numCols, numRows);
     
     // Make grid items and append it to the container box
     let numGridItems = numRows * numCols
     for (let i = 0; i < numGridItems; i++) {
-    let newDiv = document.createElement("div");
-    
-    // When mouse hovers to the div, it changes the color
-    newDiv.addEventListener("mouseover", () => {
-      newDiv.style.background = giveRandomRGB();
-    });
+      let newDiv = document.createElement("div");
+      let numDataCalled = document.createAttribute("data-num-hovered");
+      numDataCalled.value = 0;
+      newDiv.setAttributeNode(numDataCalled);
+          
+      // When mouse hovers to the div, it changes the color
+      newDiv.addEventListener("mouseover", () => {
+        let numCalled = newDiv.getAttribute("data-Num-Hovered");
+        console.log(`data-num-hovered: ${numCalled}`);
+        let initialRGB = randomRgbsList[i];
+        newDiv.style.background = 
+  
+        console.log(makeRGBTenPercentToBlack(randomRgbsList[i]));
+        
+      });
 
-    container.appendChild(newDiv);
+      container.appendChild(newDiv);
     }
-  } 
+  }
 
+  // This make random RGB values for given number of the boxes in the grid
+  // This values will be assigned to each div in the grid
+  function makeRgbsList(numCols, numRows) {
+    for (let i = 0; i < numCols * numRows; i++) {
+      randomRgbsList.push(giveRandomRGB())
+    }
+  }
+
+  // Make the value 10 percent close to black
+  function makeRGBTenPercentToBlack(rgbValue) {
+    let rgbInArray = rgbStringTearDown(rgbValue);
+    
+    let red = rgbInArray[0];
+    let green = rgbInArray[1];
+    let blue = rgbInArray[2];
+
+    let oneTenthRed = (red * 0.1).toPrecision(3);
+    let oneTenthGreen = (green * 0.1).toPrecision(3);
+    let oneTenthBlue = (blue * 0.1).toPrecision(3);
+
+    red = (red - oneTenthRed).toPrecision(4);
+    green = (green - oneTenthGreen).toPrecision(4);
+    blue = (blue - oneTenthBlue).toPrecision(4);
+
+    return `rgb(${red}, ${green}, ${blue})`;
+  }
+
+  // This will tear down the rgb string, and return rgb as an array-like
+  // e.g. rgb(10, 20, 50) -> [10, 20, 50]
+  function rgbStringTearDown(rgbStr) {
+    let startIndex = rgbStr.search("\\(") + 1;
+    let endIndex = rgbStr.search("\\)");
+    let rgb = rgbStr.substring(startIndex, endIndex);
+    rgb = rgb.split(",");
+    
+    return rgb;
+  }
+
+  // This will giv ethe random RGB value
   function giveRandomRGB() {
     let redVal = Math.floor(Math.random() * 256);
     let greenVal = Math.floor(Math.random() * 256);
     let blueVal = Math.floor(Math.random() * 256);
 
-    console.log(`rgb(${redVal}, ${greenVal}, ${blueVal})`);
-
     return `rgb(${redVal}, ${greenVal}, ${blueVal})`;
-    
-    let oneTenthRedVal = (redVal * 0.1).toPrecision(3);
-    let oneTenthGreenVal = (greenVal * 0.1).toPrecision(3);
-    let oneTenthBlueVal = (blueVal * 0.1).toPrecision(3);
   }
 
   promptUserSqrs();
   
   let container = document.getElementById("container");
+  
   makeGrid(numCols, numRows)
 
   // If the button is clicked
@@ -83,6 +131,8 @@
     removeAllChilds(container);
     setTimeout(promptUserSqrs(makeGrid), 1000);
   });
+
+  
 
 </script>
 </html>
