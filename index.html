@@ -51,12 +51,26 @@
     
     // When mouse hovers to the div, it changes the color
     newDiv.addEventListener("mouseover", () => {
-      newDiv.style.background = "yellow";
+      newDiv.style.background = giveRandomRGB();
     });
 
     container.appendChild(newDiv);
     }
   } 
+
+  function giveRandomRGB() {
+    let redVal = Math.floor(Math.random() * 256);
+    let greenVal = Math.floor(Math.random() * 256);
+    let blueVal = Math.floor(Math.random() * 256);
+
+    console.log(`rgb(${redVal}, ${greenVal}, ${blueVal})`);
+
+    return `rgb(${redVal}, ${greenVal}, ${blueVal})`;
+    
+    let oneTenthRedVal = (redVal * 0.1).toPrecision(3);
+    let oneTenthGreenVal = (greenVal * 0.1).toPrecision(3);
+    let oneTenthBlueVal = (blueVal * 0.1).toPrecision(3);
+  }
 
   promptUserSqrs();
   
@@ -69,8 +83,6 @@
     removeAllChilds(container);
     setTimeout(promptUserSqrs(makeGrid), 1000);
   });
-
-  console.log(container);
 
 </script>
 </html>

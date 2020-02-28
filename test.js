@@ -1,49 +1,28 @@
 Math.floor(Math.random() * 256);
 
-// Does random return 1 as well? NOPE
-
+// Does random return 1 as well? NOP
 let redVal = Math.floor(Math.random() * 256);
+let oneTenthRedVal = (redVal * 0.1).toPrecision(3);
+
 let greenVal = Math.floor(Math.random() * 256);
+let oneTenthGreenVal = (greenVal * 0.1).toPrecision(3);
+
 let blueVal = Math.floor(Math.random() * 256);
+let oneTenthBlueVal = (blueVal * 0.1).toPrecision(3);
 
-console.log(`redVal = ${redVal}`);
-console.log(`greenVal = ${greenVal}`);
-console.log(`blueVal = ${blueVal}`);
+for (let i = 0; i < 10; i++) {
+  redVal = (redVal - oneTenthRedVal).toPrecision(4);
+  greenVal = (greenVal - oneTenthGreenVal).toPrecision(4);
+  blueVal = (blueVal - oneTenthBlueVal).toPrecision(4);
+}
 
-let oneTenthRedVal = redVal * 0.1;
-let oneTenthGreenVal = greenVal * 0.1;
-let oneTenthBlueVal = blueVal * 0.1;
-
-
-redVal = Math.round((redVal - oneTenthRedVal) * 10) / 10;
 console.log(redVal);
+console.log(greenVal);
+console.log(blueVal);
 
-redVal = Math.round((redVal - oneTenthRedVal) * 10) / 10;
-console.log(redVal);
 
-redVal = Math.round((redVal - oneTenthRedVal) * 10) / 10;
-console.log(redVal);
 
-redVal = Math.round((redVal - oneTenthRedVal) * 10) / 10;
-console.log(redVal);
 
-redVal = Math.round((redVal - oneTenthRedVal) * 10) / 10;
-console.log(redVal);
-
-redVal = Math.round((redVal - oneTenthRedVal) * 10) / 10;
-console.log(redVal);
-
-redVal = Math.round((redVal - oneTenthRedVal) * 10) / 10;
-console.log(redVal);
-
-redVal = Math.round((redVal - oneTenthRedVal) * 10) / 10;
-console.log(redVal);
-
-redVal = Math.round((redVal - oneTenthRedVal) * 10) / 10;
-console.log(redVal);
-
-redVal = Math.round((redVal - oneTenthRedVal) * 10) / 10;
-console.log(redVal);
 
 
 for (let i = 0; i < 10; i++) {
