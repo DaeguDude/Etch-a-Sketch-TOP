@@ -42,42 +42,50 @@
   
   // This will make a grid in the container by given number of cols and rows
   function makeGrid(numCols, numRows) {
-    // Get container ready for GridItems
+    // Get container style ready for the given GridItems
     container.style.gridTemplateColumns = `repeat(${numCols}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${numRows}, 1fr)`;
 
-    // Make RGBs array to give it to the container 
+    // Make random RGB value list that contains RGB values for 
+    // the given number of divs
     makeRgbsList(numCols, numRows);
     
     // Make grid items and append it to the container box
     let numGridItems = numRows * numCols
     for (let i = 0; i < numGridItems; i++) {
+
+      // Create an element div, which has custom attribute 'data-num-hovered'
+      // 'data-num-hovered' will be checked for number of times the div is
+      // hovered
       let newDiv = document.createElement("div");
-      let numDataCalled = document.createAttribute("data-num-hovered");
-      numDataCalled.value = 0;
-      newDiv.setAttributeNode(numDataCalled);
+      newDiv.setAttribute("data-num-hovered", 0);
           
       // When mouse hovers to the div, it changes the color
       newDiv.addEventListener("mouseover", () => {
+        // Get the value of how number of times it was hovered.
         let numCalled = newDiv.getAttribute("data-num-hovered");
         
-        // This is the initial RGB
+        // This is the initial RGB, we take it from the list that has Random
+        // Rgb value.
         let initialRGB = randomRgbsList[i];
 
-        if (numCalled === 0) {
-          newDiv.style.background = randomRgbsList[i]; 
-        }
-         
-        if (numCalled < 10) {
-          numCalled++;
-          newDiv.setAttribute("data-num-hovered", numCalled);
+        // First check it was hovered more than 10 times, if not, we increment
+        // and make it more darker. 
+        // The reason we give 11 is to not consider first hover as a hover.
 
-          let newRGB = makeRGBGivenPercentToBlack(initialRGB, numCalled);
-          newDiv.style.background = newRGB;
-        }
+        // If it was never called before, give initialRGB value as a background    
+        if (numCalled < 11) {
+          if (numCalled === 0) {
+            newDiv.style.background = initialRGB; 
+            numCalled++;
+          } else {
+            numCalled++;
+            newDiv.setAttribute("data-num-hovered", numCalled);
 
-       
-        
+            let newRGB = makeRGBGivenPercentToBlack(initialRGB, numCalled);
+            newDiv.style.background = newRGB;
+          }
+        }
       });
 
       container.appendChild(newDiv);
@@ -92,7 +100,7 @@
     }
   }
 
-  // Make the value 10 percent close to black
+  // Make the value given percent close to black
   function makeRGBGivenPercentToBlack(rgbValue, numCalled) {
     let rgbInArray = rgbStringTearDown(rgbValue);
     
