@@ -16,27 +16,27 @@ dent's solutions, and they were pretty impressive. I am afraid if I could make
 it like that as well, but I will try my best and get help from others to accompl
 ish it.
 
-~1. Follow the instructions atop Odin’s Google Homepage project to setup a git repository for this project.~
+1. Follow the instructions atop Odin’s Google Homepage project to setup a git repository for this project.
 
 2. Create a webpage with a 16x16 grid of square divs
     
-    ~1. Create the divs using JavaScript… don’t try making them by hand with copy and pasting in your html file!~
+    1. Create the divs using JavaScript… don’t try making them by hand with copy and pasting in your html file!
 
-    ~2. Best to put your grid squares inside another "container" div(that one can
-    go directly in your html)~
+    2. Best to put your grid squares inside another "container" div(that one can
+    go directly in your html)
 
-    ~3. There are several diffrent ways to make the divs appear as a grid(versus
-    just one on each line) feel free to use any or play with each of them:~
+    3. There are several diffrent ways to make the divs appear as a grid(versus
+    just one on each line) feel free to use any or play with each of them:
     
         1. float/clear
         2. inline-block
         3. flexbox
         4. CSS Grid
 
-    ~4. Be careful with borders and margins, they can adjust the size of the 
-    squares!~
+    4. Be careful with borders and margins, they can adjust the size of the 
+    squares!
 
-    ~5. "OMG, Why isn't my grid being created???"~
+    5. "OMG, Why isn't my grid being created???"
 
         1. Open your browser's developer tools
         2. Check if there are any erros in the JavaScript console
@@ -46,9 +46,9 @@ ish it.
         see if it's actually being loaded.
 
 
-~3. Set up a "hover" effect so that the grid divs change color when your mouse
+3. Set up a "hover" effect so that the grid divs change color when your mouse
 passes over them, leaving a (pixelated) trail through your grid like a pen would
-.~
+.
 
     1. Hint: "hovering" is what happens when your mouse enters a div and ends
     when your mouse leaves it.. you can set up event listeners for either of 
@@ -58,20 +58,16 @@ passes over them, leaving a (pixelated) trail through your grid like a pen would
         1. adding a new class to the div
         2. changing the div's background color using JavaScript.
 
-~4. Add a button to the top of the screen which will clear the current grid and
+4. Add a button to the top of the screen which will clear the current grid and
 send the user a popup asking for how many squares per side to make the new grid.
 Once entered the new grid should be generated in the same total space as before
-(e.g. 960px wide) and now you've got a new sketch pad.~
+(e.g. 960px wide) and now you've got a new sketch pad.
 
     1. Research button tags in HTML and how you can make a JavaScript function 
     run when one is clicked.
     2. Also check out prompts
     3. You should be able to enter 64 and have a brand new 64x64 grid pop up wi
     thout changing the total amount of pixels used 
-
-# WORK ON....
-- How to deal with float precision in Javascript?
-- Prompt cancel input
 
 5. (Optional): Instead of just changing the color of your grid from black to whi
 te (for example) have each pass through it with the mouse change to a completel
