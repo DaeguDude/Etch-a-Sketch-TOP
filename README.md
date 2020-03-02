@@ -8,70 +8,19 @@ try my best to solve this problem.
 
 <b>By the end of this project, you should be able to write what skills you have learned.</b>
 
-### Assignment
+### FINISHED, What have I learnt?
 
-There are assignments to be followed. By following these steps in the assignment
-I should be able to accomplish the project. I have just had a look at the stu
-dent's solutions, and they were pretty impressive. I am afraid if I could make
-it like that as well, but I will try my best and get help from others to accompl
-ish it.
+- How to make grid
 
-1. Follow the instructions atop Odin’s Google Homepage project to setup a git repository for this project.
+Although I am not really good with handling grid yet, I have managed to learn to make simple a grid
 
-2. Create a webpage with a 16x16 grid of square divs
-    
-    1. Create the divs using JavaScript… don’t try making them by hand with copy and pasting in your html file!
+- Making a lot of functions in code
 
-    2. Best to put your grid squares inside another "container" div(that one can
-    go directly in your html)
+I tried to make a lot of functions in the script, so it's rather explicit that what I was trying to do. However, because of a lot of functions, it is sort of mess as well. 
+I'm pretty sure if I come back later at this code, I don't think I will grasp what this is in the first place.
 
-    3. There are several diffrent ways to make the divs appear as a grid(versus
-    just one on each line) feel free to use any or play with each of them:
-    
-        1. float/clear
-        2. inline-block
-        3. flexbox
-        4. CSS Grid
+### What can I do to more improve?
 
-    4. Be careful with borders and margins, they can adjust the size of the 
-    squares!
+- Stop being a perfectionist
 
-    5. "OMG, Why isn't my grid being created???"
-
-        1. Open your browser's developer tools
-        2. Check if there are any erros in the JavaScript console
-        3. Check your "elements" pane to see if the elements have actually shown
-        up but are somehow hidden.
-        4. Go willy-nilly and add console.log statements in your JavaScript to
-        see if it's actually being loaded.
-
-
-3. Set up a "hover" effect so that the grid divs change color when your mouse
-passes over them, leaving a (pixelated) trail through your grid like a pen would
-.
-
-    1. Hint: "hovering" is what happens when your mouse enters a div and ends
-    when your mouse leaves it.. you can set up event listeners for either of 
-    those events as a starting point.
-
-    2. There are multiple ways to change the color of the divs, including:
-        1. adding a new class to the div
-        2. changing the div's background color using JavaScript.
-
-4. Add a button to the top of the screen which will clear the current grid and
-send the user a popup asking for how many squares per side to make the new grid.
-Once entered the new grid should be generated in the same total space as before
-(e.g. 960px wide) and now you've got a new sketch pad.
-
-    1. Research button tags in HTML and how you can make a JavaScript function 
-    run when one is clicked.
-    2. Also check out prompts
-    3. You should be able to enter 64 and have a brand new 64x64 grid pop up wi
-    thout changing the total amount of pixels used 
-
-5. (Optional): Instead of just changing the color of your grid from black to whi
-te (for example) have each pass through it with the mouse change to a completel
-y random RGB value. Then try having each pass just add another 10% of black to i
-t so that only after 10 passes is the square completely black.
-
-6. Push your project to Github!
+My main focus should be getting a job done, and fix it again and again. Since I'm a beginner, what I think perfect wouldn't be that perfect at other's perspective, so just get a job done and fix it multiple times
